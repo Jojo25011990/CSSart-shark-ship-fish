@@ -1,0 +1,278 @@
+@use "../abstract" as *;
+
+// *** Shark ***
+.shark {
+	position: absolute;
+	top: 7rem;
+	left: 5rem;
+
+	filter: drop-shadow(0 0 0.2rem rgba($color-black, 0.2));
+
+	@include dimension-settings(100%, 18rem, null, 55rem);
+
+	// *** Head ***
+	&__head {
+		position: absolute;
+		top: 2rem;
+		left: 30rem;
+
+		background-color: $color-blue-quaternary;
+
+		border-radius: 0 0 100% 0;
+
+		overflow: hidden;
+
+		@include dimension-settings(20rem, 15rem);
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+
+			background-color: rgba($color-white, 0.2);
+
+			border-bottom-right-radius: 15%;
+			border-bottom-left-radius: 100%;
+			border-top-right-radius: 0%;
+
+			@include dimension-settings(100%, 5rem);
+		}
+	}
+	// *** End of Head ***
+
+	// *** Body ***
+	&__body {
+		position: absolute;
+		top: 2rem;
+		left: 1rem;
+
+		background-color: $color-blue-quaternary;
+
+		overflow: hidden;
+
+		border-bottom-right-radius: 15%;
+		border-bottom-left-radius: 100%;
+		border-top-right-radius: 0%;
+
+		@include dimension-settings(70%, 15rem);
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+
+			background-color: rgba($color-white, 0.2);
+
+			border-bottom-right-radius: 15%;
+			border-bottom-left-radius: 100%;
+			border-top-right-radius: 0%;
+
+			@include dimension-settings(100%, 5rem);
+		}
+	}
+	// *** End of Body ***
+
+	// *** Dorsal Fin ***
+	&__dorsal-fin {
+		position: absolute;
+		top: -4rem;
+		left: 55%;
+		transform: translateX(-55%) skewX(10deg);
+
+		background-color: $color-blue-quaternary;
+
+		border-radius: 0 90% 0 0;
+
+		@include dimension-settings(7rem, 7rem);
+	}
+	// *** End of Dorsal Fin ***
+
+	// *** Pectorals Fin ***
+	&__pectorals-fin {
+		position: absolute;
+		bottom: -4rem;
+		left: 56%;
+		transform: translateX(-56%) skewX(-10deg);
+		z-index: 1;
+
+		background-color: $color-blue-quaternary;
+
+		border-radius: 0 0 90% 0;
+
+		@include dimension-settings(7rem, 7rem);
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 2rem;
+			left: 7rem;
+			transform: translateX(-10%) skewX(-10deg);
+
+			background-color: $color-blue-quaternary;
+
+			border-radius: 0 0 90% 0;
+
+			@include dimension-settings(5rem, 5rem);
+		}
+	}
+	// *** End of Pectorals Fin ***
+
+	// *** Gill Slits ***
+	&__gill-slits {
+		position: absolute;
+		top: 5rem;
+		left: 35rem;
+
+		border-right: 0.5rem solid rgba($color-white, 0.2);
+		border-radius: 40%;
+
+		@include dimension-settings(0, 6rem);
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: -1rem;
+
+			border-right: 0.5rem solid rgba($color-white, 0.2);
+			border-radius: 40%;
+
+			@include dimension-settings(0, 6rem);
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 1rem;
+
+			border-right: 0.5rem solid rgba($color-white, 0.2);
+			border-radius: 40%;
+
+			@include dimension-settings(0, 6rem);
+		}
+	}
+	// *** End of Gill Slits ***
+
+	// *** Tail ***
+	&__tail {
+		position: absolute;
+		top: -5rem;
+		left: -0.6rem;
+		transform: skewX(10deg);
+
+		background-color: $color-blue-quaternary;
+
+		border-radius: 0 120% 0 0;
+
+		@include dimension-settings(5rem, 10rem);
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: -8rem;
+			left: -1.2rem;
+			transform: rotate(180deg) skewX(-20deg);
+
+			background-color: $color-blue-quaternary;
+
+			border-radius: 120% 0 0 0;
+
+			@include dimension-settings(5rem, 10rem);
+		}
+	}
+	// *** End of Tail ***
+
+	// *** Eye ***
+	&__eye {
+		position: absolute;
+		top: 4rem;
+		right: 10rem;
+
+		background-color: $color-white;
+
+		border-radius: 50%;
+		border: 0.6rem solid $color-black;
+
+		@include dimension-settings(1.7rem, 1.7rem);
+	}
+	// *** End of Eye ***
+
+	// *** Mouth ***
+	&__mouth {
+		position: absolute;
+		top: 7rem;
+		right: 7.65rem;
+		transform: rotate(20deg) skew(-21.2deg);
+		z-index: 10;
+
+		background-color: $color-white;
+
+		border: 0.3rem solid $color-black;
+		border-radius: 0 0% 0 90%;
+
+		overflow: hidden;
+
+		@include dimension-settings(8rem, 3rem);
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 11;
+
+			background-color: $color-black;
+
+			clip-path: polygon(
+				0% 100%,
+				10% 0%,
+				20% 100%,
+				30% 0%,
+				40% 100%,
+				50% 0%,
+				60% 100%,
+				70% 0%,
+				80% 100%,
+				90% 0%,
+				100% 100%
+			);
+
+			@include dimension-settings(100%, 100%);
+		}
+	}
+	// *** End of Mouth ***
+
+	// *** Text Bubble ***
+	&__text-bubble {
+		position: absolute;
+		bottom: -1rem;
+		right: -5rem;
+
+		color: $color-black-light;
+		background-color: $color-white;
+
+		border-radius: 50%;
+
+		filter: drop-shadow(0 0 0.2rem rgba($color-black, 0.2));
+
+		@include dimension-settings(14rem, 8rem);
+		@include flex-settings;
+		@include font-settings(1.5rem);
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: -5rem;
+			left: 0;
+
+			transform: rotate(-25deg);
+
+			border-bottom: 2rem solid $color-white;
+			border-left: 0.8rem solid transparent;
+			border-right: 0.8rem solid transparent;
+
+			@include dimension-settings(null, 7rem);
+		}
+	}
+	// *** End of Text Bubble ***
+}
+// *** End of Shark ***

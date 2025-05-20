@@ -1,0 +1,153 @@
+@use "../abstract" as *;
+
+// *** Sun ***
+.sun {
+	position: absolute;
+	top: 10rem;
+	left: 40rem;
+
+	background-color: $color-orangered-primary;
+
+	border-radius: 50%;
+
+	box-shadow: 0 0 1rem rgba($color-orangered-tertiary, 0.6),
+		0 0 2rem rgba($color-orangered-tertiary, 0.3),
+		0 0 3rem rgba($color-orangered-tertiary, 0.1);
+
+	@include dimension-settings(25rem, 25rem);
+}
+// *** End of Sun ***
+
+// *** Clouds ***
+.clouds {
+	position: relative;
+
+	@include dimension-settings(100%, 60vh);
+
+	&__cloud {
+		position: absolute;
+
+		background-color: $color-white-light;
+
+		filter: drop-shadow(0 0 0.5rem rgba($color-black, 0.2));
+	}
+
+	&__cloud-01 {
+		top: 0;
+		left: 0;
+
+		border-radius: 0 50% 50% 0;
+
+		@include dimension-settings(10rem, 15rem);
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: -3rem;
+			left: 0;
+
+			z-index: -1;
+
+			background-color: $color-white-light;
+
+			border-radius: 50%;
+
+			@include dimension-settings(10rem, 10rem);
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0rem;
+			left: 5rem;
+
+			z-index: -1;
+
+			background-color: $color-white-light;
+
+			border-radius: 50%;
+
+			@include dimension-settings(10rem, 10rem);
+		}
+	}
+
+	&__cloud-02 {
+		top: 20rem;
+		left: 8rem;
+
+		border-radius: 6rem;
+
+		@include dimension-settings(30rem, 10rem);
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 5rem;
+			left: 0;
+
+			border-radius: 50%;
+
+			background-color: $color-white-light;
+
+			box-shadow: 10rem 0 0 transparent, 12rem 0 0 3rem $color-white-light,
+				10rem -7rem 0 5rem $color-white-light;
+
+			@include dimension-settings(10rem, 10rem);
+		}
+	}
+
+	&__cloud-03 {
+		top: -2rem;
+		left: 40rem;
+
+		border-radius: 6rem;
+
+		@include dimension-settings(30rem, 12rem);
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 5rem;
+			left: 0;
+
+			background-color: $color-white-light;
+
+			border-radius: 50%;
+
+			box-shadow: 10rem 0 0 transparent, 12rem 0 0 3rem $color-white-light,
+				10rem -7rem 0 5rem $color-white-light;
+
+			@include dimension-settings(10rem, 10rem);
+		}
+	}
+
+	&__cloud-04 {
+		top: 10rem;
+		left: 80rem;
+
+		@extend .clouds__cloud-02;
+	}
+
+	&__cloud-05 {
+		top: 0;
+		left: 115rem;
+
+		@extend .clouds__cloud-02;
+	}
+
+	&__cloud-06 {
+		top: 5rem;
+		left: 160rem;
+
+		@extend .clouds__cloud-02;
+	}
+
+	&__cloud-07 {
+		top: 22rem;
+		left: 135rem;
+
+		@extend .clouds__cloud-02;
+	}
+}
+
+// *** End of Clouds ***

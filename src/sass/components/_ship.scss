@@ -1,0 +1,246 @@
+@use "../abstract" as *;
+
+// *** Ship ***
+.ship {
+	position: absolute;
+	top: 51.5%;
+	left: 45%;
+	transform: translate(-45%, -51.5%);
+
+	@include dimension-settings(100%, 20rem, null, 50rem);
+
+	// *** Body ***
+	&__body {
+		position: absolute;
+		bottom: 0;
+
+		background-color: $color-black-light;
+
+		clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+
+		@include dimension-settings(100%, 10rem);
+		@include flex-settings;
+
+		&::before {
+			content: "Web.Animations.And.Effects";
+
+			color: $color-white-light;
+
+			@include font-settings(2rem, 700);
+		}
+	}
+	// *** End of Body ***
+
+	// *** Cargo ***
+	&__cargo {
+		position: absolute;
+		top: 5rem;
+		left: 65%;
+		transform: translateX(-65%);
+
+		background-color: $color-green-primary;
+
+		@include dimension-settings(12rem, 5rem);
+
+		// *** Line ***
+		&-line {
+			position: absolute;
+			left: 2.5rem;
+
+			background-color: $color-green-tertiary;
+
+			@include dimension-settings(1.25rem, 100%);
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 3rem;
+
+				background-color: $color-green-tertiary;
+
+				@include dimension-settings(1.25rem, 100%);
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				left: 6rem;
+
+				background-color: $color-green-tertiary;
+
+				@include dimension-settings(1.25rem, 100%);
+			}
+		}
+		// *** End of Line ***
+
+		// *** Cargo 01 ***
+		&-01 {
+			left: 35%;
+			transform: translateX(-35%);
+
+			background-color: $color-orangered-primary;
+
+			&-line {
+				background-color: $color-orangered-tertiary;
+
+				&::before {
+					background-color: $color-orangered-tertiary;
+				}
+				&::after {
+					background-color: $color-orangered-tertiary;
+				}
+			}
+		}
+		// *** End of Cargo 01 ***
+
+		// *** Cargo 02 ***
+		&-02 {
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+
+			background-color: $color-blue-secondary;
+
+			&-line {
+				background-color: $color-blue-tertiary;
+
+				&::before {
+					background-color: $color-blue-tertiary;
+				}
+				&::after {
+					background-color: $color-blue-tertiary;
+				}
+			}
+		}
+		// *** End of Cargo 02 ***
+	}
+	// *** End of Cargo ***
+
+	// *** Crane ***
+	&__crane {
+		position: absolute;
+		left: 6rem;
+
+		background-color: $color-white;
+
+		border-radius: 0.5rem 0.5rem 0 0;
+
+		@include dimension-settings(1rem, 10rem);
+
+		// *** Line ***
+		&-line {
+			position: absolute;
+			top: 2rem;
+			left: -1rem;
+			transform: rotate(15deg);
+			z-index: -1;
+
+			background-color: $color-white;
+
+			@include dimension-settings(0.3rem, 10rem);
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 2.5rem;
+				left: 3.4rem;
+				transform: rotate(-30deg);
+
+				background-color: $color-white;
+
+				@include dimension-settings(0.3rem, 10rem);
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0rem;
+				left: 3rem;
+				transform: rotate(-30deg);
+				z-index: -1;
+
+				background-color: $color-white;
+
+				@include dimension-settings(0.3rem, 10rem);
+			}
+		}
+		// *** End of Line ***
+	}
+	// *** End of Crane ***
+
+	// *** Engine ***
+	&__engine {
+		position: absolute;
+		bottom: 10rem;
+		right: -4rem;
+
+		@include dimension-settings(15rem, 20rem);
+
+		// *** Head ***
+		&-head {
+			position: absolute;
+			bottom: 7rem;
+			right: 7rem;
+
+			background-color: $color-black-light;
+			@include dimension-settings(1rem, 4rem);
+		}
+		// *** End of Head ***
+
+		// *** Body ***
+		&-body {
+			position: absolute;
+			bottom: 0;
+
+			background-color: $color-black-light;
+
+			@include dimension-settings(10rem, 7rem);
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 2rem;
+				left: 2rem;
+				transform: translateX(-35%);
+
+				background-color: $color-white;
+
+				@include dimension-settings(3rem, 2rem);
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 2rem;
+				right: 0rem;
+				transform: translateX(-35%);
+
+				background-color: $color-white;
+
+				@include dimension-settings(3rem, 2rem);
+			}
+		}
+		// *** End of Body ***
+
+		// *** Smoke ***
+		&-smoke {
+			position: absolute;
+			left: 5rem;
+			top: 0.5rem;
+			transform: rotate(-30deg);
+
+			background-color: $color-white;
+
+			border-radius: 12rem 6rem 6rem 0;
+
+			box-shadow: 0 0 1rem $color-white;
+
+			filter: blur(1rem) contrast(0.1) opacity(0.4)
+				drop-shadow(0 0 1rem rgba($color-black, 0.2));
+
+			@include dimension-settings(100%, 6rem);
+		}
+		// *** End of Smoke ***
+	}
+	// *** End of Engine ***
+}
+// *** End of Ship ***

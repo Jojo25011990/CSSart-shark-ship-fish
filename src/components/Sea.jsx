@@ -3,8 +3,6 @@ import Rocks from "./rocks";
 import Shark from "./Shark";
 
 export const Sea = () => {
-	// vytvor pole s 20 položkami (čísla 0-19)
-
 	const waveElements = Array.from({ length: 20 }, (_, i) => i);
 
 	return (

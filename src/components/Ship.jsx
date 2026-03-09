@@ -1,6 +1,6 @@
 const Ship = () => {
 	return (
-		<div className="ship">
+		<div className="ship" aria-hidden="true">
 			<div className="ship__body"></div>
 			<div className="ship__cargo">
 				<div className="ship__cargo-line"></div>

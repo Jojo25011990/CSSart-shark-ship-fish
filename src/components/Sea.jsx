@@ -6,7 +6,11 @@ export const Sea = () => {
 	const waveElements = Array.from({ length: 20 }, (_, i) => i);
 
 	return (
-		<div className="sea" style={{ display: "flex", overflow: "hidden" }}>
+		<div
+			className="sea"
+			aria-hidden="true"
+			style={{ display: "flex", overflow: "hidden" }}
+		>
 			{waveElements.map((i) => (
 				<div
 					key={i}
